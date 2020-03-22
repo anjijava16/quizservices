@@ -86,6 +86,39 @@ CREATE TABLE IF NOT EXISTS `QUESTION` (
 
 -- Data exporting was unselected.
 
+-- Dumping structure for table mmtechso_quizdb.quiz_audit_logs
+CREATE TABLE IF NOT EXISTS `quiz_audit_logs` (
+  `audit_id` int(11) NOT NULL AUTO_INCREMENT,
+  `audit_rand_id` varchar(58) DEFAULT NULL,
+  `audit_type` varchar(52) DEFAULT NULL COMMENT 'It is REQ or RES TYPE only',
+  `audit_operation_type` varchar(256) DEFAULT NULL,
+  `audit_user_id` varchar(128) DEFAULT NULL,
+  `audit_host_ip` varchar(68) DEFAULT NULL,
+  `audit_browser_ip` varchar(68) DEFAULT NULL,
+  `audit_application_type` varchar(68) DEFAULT NULL,
+  `audit_response` varchar(128) DEFAULT NULL COMMENT 'Response Code',
+  `audit_description` varchar(2048) DEFAULT NULL COMMENT 'It is only for REQ type of Record full data',
+  `audit_created_ts` datetime DEFAULT NULL,
+  PRIMARY KEY (`audit_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table mmtechso_quizdb.quiz_service_config
+CREATE TABLE IF NOT EXISTS `quiz_service_config` (
+  `service_id` varchar(64) NOT NULL,
+  `service_name` varchar(128) DEFAULT NULL,
+  `service_status` tinyint(4) DEFAULT NULL,
+  `service_token_id` varchar(256) DEFAULT NULL,
+  `service_desc` varchar(50) DEFAULT NULL,
+  `service_type` varchar(50) DEFAULT NULL,
+  `service_created_by` varchar(50) DEFAULT NULL,
+  `service_created_ts` datetime DEFAULT NULL,
+  PRIMARY KEY (`service_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Data exporting was unselected.
+
 -- Dumping structure for table mmtechso_quizdb.USERS
 CREATE TABLE IF NOT EXISTS `USERS` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -104,6 +137,18 @@ CREATE TABLE IF NOT EXISTS `USERS` (
   `creted_ts` datetime DEFAULT NULL,
   `updated_ts` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table mmtechso_quizdb.user_roles
+CREATE TABLE IF NOT EXISTS `user_roles` (
+  `user_role_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_role_name` varchar(50) DEFAULT NULL,
+  `user_role_des` varchar(50) DEFAULT NULL,
+  `user_role_created_by` varchar(50) DEFAULT NULL,
+  `user_role_created_ts` datetime DEFAULT NULL,
+  PRIMARY KEY (`user_role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
