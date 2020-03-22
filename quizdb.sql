@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `QUESTION` (
 -- Data exporting was unselected.
 
 -- Dumping structure for table mmtechso_quizdb.quiz_audit_logs
-CREATE TABLE IF NOT EXISTS `quiz_audit_logs` (
+CREATE TABLE IF NOT EXISTS `QUIZ_AUDIT_LOGS` (
   `audit_id` int(11) NOT NULL AUTO_INCREMENT,
   `audit_rand_id` varchar(58) DEFAULT NULL,
   `audit_type` varchar(52) DEFAULT NULL COMMENT 'It is REQ or RES TYPE only',
@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `quiz_audit_logs` (
 -- Data exporting was unselected.
 
 -- Dumping structure for table mmtechso_quizdb.quiz_service_config
-CREATE TABLE IF NOT EXISTS `quiz_service_config` (
+CREATE TABLE IF NOT EXISTS `QUIZ_SERVICE_CONFIG` (
   `service_id` varchar(64) NOT NULL,
   `service_name` varchar(128) DEFAULT NULL,
   `service_status` tinyint(4) DEFAULT NULL,
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `USERS` (
 -- Data exporting was unselected.
 
 -- Dumping structure for table mmtechso_quizdb.user_roles
-CREATE TABLE IF NOT EXISTS `user_roles` (
+CREATE TABLE IF NOT EXISTS `USER_ROLES` (
   `user_role_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_role_name` varchar(50) DEFAULT NULL,
   `user_role_des` varchar(50) DEFAULT NULL,
